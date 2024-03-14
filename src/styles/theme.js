@@ -2,7 +2,7 @@ export const theme = {
   colors: {
     backgroundMain: '#FFFFFF',
     backgroundTableHeader: '#DBDBDB',
-    backgroundauth: 'rgba(133, 170, 159, 0.1)',
+    backgroundAuth: 'rgba(133, 170, 159, 0.1)',
     greenMain: '#85AA9F',
     textWhiteMain: '#FCFCFC',
     textWhiteSecondary: 'rgba(252, 252, 252, 0.5)',

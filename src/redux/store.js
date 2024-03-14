@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 
 import { persistReducer } from 'redux-persist';
-import { authReducer } from './authSlice';
+import { authReducer } from './authSlice/authSlice';
 
 const authPersistConfig = {
   key: 'auth',

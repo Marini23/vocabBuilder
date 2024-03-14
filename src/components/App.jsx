@@ -1,10 +1,11 @@
+import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import { Route, Routes } from 'react-router-dom';
 
 export const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<div>Home</div>}>
+        <Route path="/" element={<RegisterPage />}>
           <Route index element={<div>Home</div>} />
           <Route path="/register" element={<div>Register</div>} />
           <Route path="/login" element={<div>Log In</div>} />
