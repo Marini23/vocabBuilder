@@ -3,9 +3,11 @@ import * as Yup from 'yup';
 import toast from 'react-hot-toast';
 import {
   Button,
+  ButtonLink,
   ErrorMessage,
   Form,
   Input,
+  Link,
   PasswordContainer,
   Text,
   Title,
@@ -137,6 +139,9 @@ export const RegisterForm = ({ isClose }) => {
           <ErrorMessage>{formik.errors.password}</ErrorMessage>
         ) : null}
         <Button type="submit">Register</Button>
+        <ButtonLink>
+          <Link href="login">Login</Link>
+        </ButtonLink>
       </Form>
     </>
   );

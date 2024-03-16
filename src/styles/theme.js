@@ -1,6 +1,8 @@
 export const theme = {
   colors: {
+    black: '#121417',
     backgroundMain: '#FFFFFF',
+    backgroundSecondary: '#F8F8F8',
     backgroundTableHeader: '#DBDBDB',
     backgroundAuth: 'rgba(133, 170, 159, 0.1)',
     greenMain: '#85AA9F',
