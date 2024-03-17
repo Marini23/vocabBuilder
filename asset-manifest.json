@@ -1,21 +1,26 @@
 {
   "files": {
     "main.css": "/vocabBuilder/static/css/main.cd2e038f.css",
-    "main.js": "/vocabBuilder/static/js/main.c074400c.js",
+    "main.js": "/vocabBuilder/static/js/main.dabdb856.js",
+    "static/media/illustration_desktop_4x.jpg": "/vocabBuilder/static/media/illustration_desktop_4x.da4e28eba7d90f6735f0.jpg",
+    "static/media/illustration_desktop_3x.jpg": "/vocabBuilder/static/media/illustration_desktop_3x.afc8904cde0a9c998c5c.jpg",
+    "static/media/illustration_desktop_2x.jpg": "/vocabBuilder/static/media/illustration_desktop_2x.9fb7d2d56dacb6801a61.jpg",
     "static/media/illustration_mobile_4x.jpg": "/vocabBuilder/static/media/illustration_mobile_4x.18d0ffb198b14fec37cd.jpg",
     "static/media/illustration_mobile_3x.jpg": "/vocabBuilder/static/media/illustration_mobile_3x.1c88444939e2de72afa2.jpg",
+    "static/media/illustration_desktop.jpg": "/vocabBuilder/static/media/illustration_desktop.b2415d73ec30c62a780d.jpg",
     "static/media/illustration_mobile_2x.jpg": "/vocabBuilder/static/media/illustration_mobile_2x.82123e427e9fe61b5c24.jpg",
     "static/media/FixelDisplay-Bold.woff2": "/vocabBuilder/static/media/FixelDisplay-Bold.6ae57eaa724edd583594.woff2",
     "static/media/FixelDisplay-SemiBold.woff2": "/vocabBuilder/static/media/FixelDisplay-SemiBold.0d9c7922e852aba2e5e9.woff2",
     "static/media/FixelDisplay-Medium.woff2": "/vocabBuilder/static/media/FixelDisplay-Medium.1fa711b7946b6572188e.woff2",
     "static/media/FixelDisplay-Regular.woff2": "/vocabBuilder/static/media/FixelDisplay-Regular.7025834e819edbb98433.woff2",
     "static/media/illustration_mobile.jpg": "/vocabBuilder/static/media/illustration_mobile.98ddcf48fed026418725.jpg",
+    "static/media/icons.svg": "/vocabBuilder/static/media/icons.f6b2bd0ef3bfe583fa44c2efc6fc3b21.svg",
     "index.html": "/vocabBuilder/index.html",
     "main.cd2e038f.css.map": "/vocabBuilder/static/css/main.cd2e038f.css.map",
-    "main.c074400c.js.map": "/vocabBuilder/static/js/main.c074400c.js.map"
+    "main.dabdb856.js.map": "/vocabBuilder/static/js/main.dabdb856.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.c074400c.js"
+    "static/js/main.dabdb856.js"
   ]
 }
