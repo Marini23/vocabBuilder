@@ -1,11 +1,11 @@
-import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 import {
   Container,
   Info,
+  InfoMobile,
   PictureDesktop,
   PictureMobile,
   WrapperImage,
-} from './RegisterPage.styled';
+} from './LoginPage.styled';
 import ill_mobile from '../../images/illustration_mobile.jpg';
 import ill_mobile_2x from '../../images/illustration_mobile_2x.jpg';
 import ill_mobile_3x from '../../images/illustration_mobile_3x.jpg';
@@ -14,8 +14,9 @@ import ill_desktop from '../../images/illustration_desktop.jpg';
 import ill_desktop_2x from '../../images/illustration_desktop_2x.jpg';
 import ill_desktop_3x from '../../images/illustration_desktop_3x.jpg';
 import ill_desktop_4x from '../../images/illustration_desktop_4x.jpg';
+import { LoginForm } from 'components/LoginForm/LoginForm';
 
-export default function RegisterPage() {
+export default function LoginPage() {
   return (
     <Container>
       <PictureMobile>
@@ -25,7 +26,8 @@ export default function RegisterPage() {
         />
         <img src={ill_mobile} alt="illustration" />
       </PictureMobile>
-      <RegisterForm />
+      <InfoMobile>Word · Translation · Grammar · Progress</InfoMobile>
+      <LoginForm />
       <WrapperImage>
         <PictureDesktop>
           <source

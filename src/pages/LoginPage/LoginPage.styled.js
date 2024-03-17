@@ -23,7 +23,6 @@ export const PictureMobile = styled.picture`
   height: 191px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 6px;
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -50,6 +49,19 @@ export const WrapperImage = styled.div`
   }
   @media screen and (min-width: 1440px) {
     margin-top: 0;
+  }
+`;
+
+export const InfoMobile = styled.p`
+  display: flex;
+  font-size: 14px;
+  line-height: 19.32px;
+  margin-top: 12px;
+  margin-bottom: 42px;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  word-spacing: 5px;
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 `;
 
