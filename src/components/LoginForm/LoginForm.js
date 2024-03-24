@@ -125,7 +125,7 @@ export const LoginForm = ({ isClose }) => {
         ) : null}
         <Button type="submit">Login</Button>
         <ButtonLink>
-          <Link href="register">Register</Link>
+          <Link href="/vocabBuilder/register">Register</Link>
         </ButtonLink>
       </Form>
     </>

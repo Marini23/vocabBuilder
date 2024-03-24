@@ -28,6 +28,7 @@ export const Title = styled.h2`
 export const Text = styled.p`
   line-height: 24px;
   color: ${({ theme }) => theme.colors.textSecondary};
+  margin-bottom: 32px;
   @media screen and (min-width: 768px) {
     font-size: 20px;
     line-height: 30px;

@@ -1,15 +1,16 @@
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Layuot } from './Layout/Layout';
 import LoginPage from 'pages/LoginPage/LoginPage';
-import { selectIsAuth } from '../redux/selectors';
+// import { selectIsAuth } from '../redux/selectors';
 import { useEffect } from 'react';
 import { fetchCurrentUser } from '../redux/authSlice/authOperations';
+import { RestrictedRoute } from './RestrictedRoute';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isAuth = useSelector(selectIsAuth);
+  // const isAuth = useSelector(selectIsAuth);
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
@@ -19,13 +20,24 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<Layuot />}>
-          <Route index element={isAuth ? <LoginPage /> : <RegisterPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/logout" element={<div>Log Out</div>} />
-          <Route path="/dictionary" element={<div>Dictionary</div>} />
-          <Route path="/recommend" element={<div>Recommend</div>} />
-          <Route path="/training" element={<div>Training</div>} />
+          {/* <Route index element={isAuth ? <LoginPage /> : <RegisterPage />} /> */}
+          <Route index element={<LoginPage />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute redirectTo="/" component={<LoginPage />} />
+            }
+          />
+          <Route path="logout" element={<div>Log Out</div>} />
+          <Route path="dictionary" element={<div>Dictionary</div>} />
+          <Route path="recommend" element={<div>Recommend</div>} />
+          <Route path="training" element={<div>Training</div>} />
           <Route path="*" element={<div>Home</div>} />
         </Route>
       </Routes>

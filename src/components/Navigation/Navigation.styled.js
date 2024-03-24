@@ -1,12 +1,25 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+export const Header = styled.header`
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
+  height: 68px;
+  margin: 0 auto;
+  padding: 16px;
+  z-index: 1;
+`;
+
 export const NavLinkLogoStyled = styled(NavLink)`
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 16px;
   text-decoration: none;
   line-height: 1.25;
   color: ${({ theme }) => theme.colors.black};

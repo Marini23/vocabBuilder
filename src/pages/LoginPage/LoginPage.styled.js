@@ -46,6 +46,7 @@ export const WrapperImage = styled.div`
   justify-content: center;
   @media screen and (min-width: 768px) {
     margin-top: 60px;
+    margin-bottom: 60px;
   }
   @media screen and (min-width: 1440px) {
     margin-top: 0;

@@ -1,12 +1,19 @@
-import {} from './Navigation.styled';
-import { NavLinkStyled, Wrapper } from './UserNav.styled';
+import { List, ListItem, NavLinkStyled, Wrapper } from './UserNav.styled';
 
 export const UserNav = () => {
   return (
     <Wrapper>
-      <NavLinkStyled to="/dictionary">Home</NavLinkStyled>
-      <NavLinkStyled to="/recommend">Psychologists</NavLinkStyled>
-      <NavLinkStyled to="/training">Psychologists</NavLinkStyled>
+      <List>
+        <ListItem>
+          <NavLinkStyled to="/dictionary">Dictionary</NavLinkStyled>
+        </ListItem>
+        <ListItem>
+          <NavLinkStyled to="/recommend">Recommend</NavLinkStyled>
+        </ListItem>
+        <ListItem>
+          <NavLinkStyled to="/training">Training</NavLinkStyled>
+        </ListItem>
+      </List>
     </Wrapper>
   );
 };
