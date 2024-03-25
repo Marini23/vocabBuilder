@@ -1,7 +1,16 @@
 import { UserBar } from 'components/UserBar/UserBar';
-import { BurgerMenuContainer, UserMenuContainer } from './BurgerMenu.styled';
+import {
+  BurgerMenuContainer,
+  CloseIcon,
+  ImgMobile,
+  ImgTablet,
+  UserMenuContainer,
+} from './BurgerMenu.styled';
 import closeIcon from './close.svg';
 import { UserNav } from 'components/UserNav/UserNav';
+import { LogOutForm } from 'components/LogOut/LogOutForm';
+import ill_burger_mobile from '../../images/ill_burger.svg';
+import ill_burger_tablet from '../../images/burger_tablet.svg';
 
 export const NavMenu = ({ isOpen, onClick }) => {
   return (
@@ -15,7 +24,7 @@ export const NavMenu = ({ isOpen, onClick }) => {
           $marginleft="0"
           isOpen={isOpen}
         />
-        <img
+        <CloseIcon
           src={closeIcon}
           alt="close menu"
           width="32px"
@@ -24,6 +33,9 @@ export const NavMenu = ({ isOpen, onClick }) => {
         />
       </UserMenuContainer>
       <UserNav />
+      <LogOutForm />
+      <ImgMobile src={ill_burger_mobile} alt="illustration" />
+      <ImgTablet src={ill_burger_tablet} alt="illustration" />
     </BurgerMenuContainer>
   );
 };

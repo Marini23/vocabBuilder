@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from './BurgerMenu.styled';
+import { BurgerIcon, Button } from './BurgerMenu.styled';
 import burgerIcon from './burger_icon.svg';
 import { NavMenu } from './NavMenu';
 
@@ -12,7 +12,7 @@ export const BurgerMenu = () => {
   return (
     <>
       <Button type="button" onClick={toggleBurger}>
-        <img src={burgerIcon} alt="burger menu" />
+        <BurgerIcon src={burgerIcon} alt="burger menu" />
       </Button>
       {burgerIsOpen ? (
         <NavMenu isOpen={burgerIsOpen} onClick={toggleBurger} />

@@ -6,7 +6,7 @@ import LoginPage from 'pages/LoginPage/LoginPage';
 // import { selectIsAuth } from '../redux/selectors';
 import { useEffect } from 'react';
 import { fetchCurrentUser } from '../redux/authSlice/authOperations';
-import { RestrictedRoute } from './RestrictedRoute';
+import RestrictedRoute from './RestrictedRoute';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -25,13 +25,19 @@ export const App = () => {
           <Route
             path="/register"
             element={
-              <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
+              <RestrictedRoute
+                redirectTo="/dictionary"
+                component={<RegisterPage />}
+              />
             }
           />
           <Route
             path="/login"
             element={
-              <RestrictedRoute redirectTo="/" component={<LoginPage />} />
+              <RestrictedRoute
+                redirectTo="/dictionary"
+                component={<LoginPage />}
+              />
             }
           />
           <Route path="logout" element={<div>Log Out</div>} />

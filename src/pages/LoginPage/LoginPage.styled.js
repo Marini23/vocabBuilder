@@ -44,6 +44,7 @@ export const WrapperImage = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   @media screen and (min-width: 768px) {
     margin-top: 60px;
     margin-bottom: 60px;

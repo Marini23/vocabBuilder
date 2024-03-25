@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import avatar from './avatar_user.svg';
 import avatarMenu from './avatar_menu.svg';
 import { selectUserName } from '../../redux/selectors';
-import { AvatarIcon, Container, Name } from './UserBar.styled';
+import { AvatarIcon, Container, Img, Name } from './UserBar.styled';
 
 export const UserBar = ({
   fontSize,
@@ -20,9 +20,9 @@ export const UserBar = ({
       </Name>
       <AvatarIcon $backgroundcolor={$backgroundcolor}>
         {isOpen ? (
-          <img src={avatarMenu} alt="avatar" />
+          <Img src={avatarMenu} alt="avatar" />
         ) : (
-          <img src={avatar} alt="avatar" />
+          <Img src={avatar} alt="avatar" />
         )}
       </AvatarIcon>
     </Container>
