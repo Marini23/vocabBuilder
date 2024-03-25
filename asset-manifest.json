@@ -1,8 +1,10 @@
 {
   "files": {
     "main.css": "/vocabBuilder/static/css/main.cd2e038f.css",
-    "main.js": "/vocabBuilder/static/js/main.6f688bfe.js",
+    "main.js": "/vocabBuilder/static/js/main.9939872c.js",
     "static/media/illustration_desktop_4x.jpg": "/vocabBuilder/static/media/illustration_desktop_4x.da4e28eba7d90f6735f0.jpg",
+    "static/media/burger_tablet.svg": "/vocabBuilder/static/media/burger_tablet.d90342d8d09c5e481f6441005777ab4c.svg",
+    "static/media/ill_burger.svg": "/vocabBuilder/static/media/ill_burger.e9d00130d498f4375577a66e6a2de3c9.svg",
     "static/media/illustration_desktop_3x.jpg": "/vocabBuilder/static/media/illustration_desktop_3x.afc8904cde0a9c998c5c.jpg",
     "static/media/illustration_desktop_2x.jpg": "/vocabBuilder/static/media/illustration_desktop_2x.9fb7d2d56dacb6801a61.jpg",
     "static/media/illustration_mobile_4x.jpg": "/vocabBuilder/static/media/illustration_mobile_4x.18d0ffb198b14fec37cd.jpg",
@@ -19,12 +21,13 @@
     "static/media/avatar_menu.svg": "/vocabBuilder/static/media/avatar_menu.238ed234e9bc1f8d013b9c52f9f63f68.svg",
     "static/media/avatar_user.svg": "/vocabBuilder/static/media/avatar_user.01a7a3d36ba7605ff688a2614c05fae5.svg",
     "static/media/burger_icon.svg": "/vocabBuilder/static/media/burger_icon.424592733778a4d52889214303e00fd1.svg",
+    "static/media/arrow-right.svg": "/vocabBuilder/static/media/arrow-right.4b214d1ffec1f2eadc67f26ccd4fdc1a.svg",
     "static/media/close.svg": "/vocabBuilder/static/media/close.7302c8098678bd148a02ae1e19f6e094.svg",
     "main.cd2e038f.css.map": "/vocabBuilder/static/css/main.cd2e038f.css.map",
-    "main.6f688bfe.js.map": "/vocabBuilder/static/js/main.6f688bfe.js.map"
+    "main.9939872c.js.map": "/vocabBuilder/static/js/main.9939872c.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.6f688bfe.js"
+    "static/js/main.9939872c.js"
   ]
 }
