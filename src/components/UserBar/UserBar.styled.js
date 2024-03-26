@@ -16,7 +16,7 @@ export const Name = styled.p`
   font-size: ${props => props.fontSize || '20px'};
   font-weight: 500;
   line-height: ${props => props.$lineheight || '27.6px'};
-  color: ${props => props.color || 'black'};
+  color: ${props => props.color || '#121417'};
   @media screen and (min-width: 768px) {
     font-size: 20px;
     line-height: 27.6px;

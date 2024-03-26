@@ -12,6 +12,9 @@ export const Button = styled.button`
   justify-content: end;
   align-items: flex-end;
   margin-left: 8px;
+  @media screen and (min-width: 768px) {
+    margin-left: 28px;
+  }
 `;
 
 export const BurgerMenuContainer = styled.div`

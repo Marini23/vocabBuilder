@@ -7,11 +7,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* gap: 10px; */
-  /* margin-right: auto; */
-  /* @media screen and (max-width: 1120px) {
-    display: none;
-  } */
+  @media screen and (min-width: 1440px) {
+    margin-top: 0;
+    margin: 0 auto;
+  }
 `;
 
 export const List = styled.ul`
@@ -23,6 +22,9 @@ export const List = styled.ul`
   align-items: flex-start;
   justify-content: start;
   gap: 28px;
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+  }
 `;
 
 export const ListItem = styled.li`
@@ -32,10 +34,15 @@ export const ListItem = styled.li`
   font-size: 14px;
   font-weight: 500;
   line-height: 19.32px;
+  padding: 12px 0;
+
   &:hover {
     padding: 12px 20px;
     background-color: ${({ theme }) => theme.colors.textWhiteMain};
     border-radius: 15px;
+    @media screen and (min-width: 1440px) {
+      background-color: ${({ theme }) => theme.colors.greenMain};
+    }
   }
 
   &:focus {
@@ -54,12 +61,21 @@ export const NavLinkStyled = styled(NavLink)`
 
   &:visited {
     color: ${({ theme }) => theme.colors.textWhiteMain};
+    @media screen and (min-width: 1440px) {
+      color: ${({ theme }) => theme.colors.black};
+    }
   }
   &:hover {
     color: ${({ theme }) => theme.colors.black};
+    @media screen and (min-width: 1440px) {
+      color: ${({ theme }) => theme.colors.textWhiteMain};
+    }
   }
 
   &:focus {
     color: ${({ theme }) => theme.colors.black};
+  }
+  @media screen and (min-width: 1440px) {
+    color: ${({ theme }) => theme.colors.textWhiteMain};
   }
 `;
