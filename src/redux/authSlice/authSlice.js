@@ -13,7 +13,7 @@ const handlePending = (state, action) => {
 const authSlice = createSlice({
   name: `auth`,
   initialState: {
-    user: { name: null, email: null, password: null },
+    user: { name: null, email: null, password: null, id: null },
     token: null,
     isLoggedIn: false,
     isRefreshing: false,

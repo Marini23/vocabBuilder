@@ -5,6 +5,7 @@
   "homepage": "https://Marini23.github.io/vocabBuilder/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
+    "@tanstack/react-table": "^8.15.3",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",

@@ -2,6 +2,11 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://vocab-builder-backend.p.goit.global/api';
+
+export const instance = axios.create({
+  baseURL: 'https://vocab-builder-backend.p.goit.global/api',
+});
+
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };

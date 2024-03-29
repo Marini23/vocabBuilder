@@ -54,8 +54,6 @@ export const Navigation = () => {
       {isdesktopWindowSize && <UserNav />}
       <UserBar />
       <BurgerMenu />
-
-      {/* {isLoggedIn && <Link to="/dictionary"></Link>} */}
     </Header>
   );
 };

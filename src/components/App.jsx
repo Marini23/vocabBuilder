@@ -7,6 +7,7 @@ import LoginPage from 'pages/LoginPage/LoginPage';
 import { useEffect } from 'react';
 import { fetchCurrentUser } from '../redux/authSlice/authOperations';
 import RestrictedRoute from './RestrictedRoute';
+import { DictionaryPage } from 'pages/DictionaryPage/DictionaryPage';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ export const App = () => {
             }
           />
           <Route path="logout" element={<div>Log Out</div>} />
-          <Route path="dictionary" element={<div>Dictionary</div>} />
+          <Route path="dictionary" element={<DictionaryPage />} />
           <Route path="recommend" element={<div>Recommend</div>} />
           <Route path="training" element={<div>Training</div>} />
           <Route path="*" element={<div>Home</div>} />
