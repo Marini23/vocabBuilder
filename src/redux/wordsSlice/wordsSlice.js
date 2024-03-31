@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchUserWords } from './wordsOperations';
+import { fetchUserWordsTest } from '../authSlice/authOperations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -34,6 +35,13 @@ const wordsSlice = createSlice({
       .addCase(fetchUserWords.pending, handlePending)
       .addCase(fetchUserWords.rejected, handleRejected)
       .addCase(fetchUserWords.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.wordsList = action.payload;
+      })
+      .addCase(fetchUserWordsTest.pending, handlePending)
+      .addCase(fetchUserWordsTest.rejected, handleRejected)
+      .addCase(fetchUserWordsTest.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.wordsList = action.payload;

@@ -1,9 +1,10 @@
 import { WordsTable } from 'components/WordsTable/WordsTable';
+import { Container } from './DictionaryPage.styled';
 
 export const DictionaryPage = () => {
   return (
-    <div>
+    <Container>
       <WordsTable />
-    </div>
+    </Container>
   );
 };

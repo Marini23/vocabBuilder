@@ -70,3 +70,33 @@ export const fetchCurrentUser = createAsyncThunk(
     }
   }
 );
+
+export const fetchUserWordsTest = createAsyncThunk(
+  'contacts/fetchUserWordsTest',
+  async (_, thunkAPI) => {
+    try {
+      const { data } = await axios.get('/words/own');
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const editWord = createAsyncThunk(
+  'contacts/editWord',
+  async (newFormValues, thunkAPI) => {
+    try {
+      const wordId = newFormValues.id;
+
+      const response = await axios.patch(`/words/edit/${wordId}`, {
+        en: newFormValues.name,
+        ua: newFormValues.number,
+      });
+
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
