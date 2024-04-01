@@ -1,8 +1,15 @@
 import { CiSearch } from 'react-icons/ci';
 import Select, { components } from 'react-select';
 import { ThemeContext } from 'styled-components';
-import { useContext } from 'react';
-import { ButtonFilter, FormFilter, InputFilter } from './Filters.styled';
+import { useContext, useState } from 'react';
+import {
+  ButtonFilter,
+  Fieldset,
+  FormFilter,
+  InputFilter,
+  InputRadio,
+} from './Filters.styled';
+import { Link } from 'react-router-dom';
 
 const data = [
   'verb',
@@ -24,9 +31,16 @@ const options = data.map(item => ({
 }));
 
 export const Filters = () => {
+  const [isVerbSelect, setIsVerbSelect] = useState(false);
   const theme = useContext(ThemeContext);
   const handleSubmit = selectedOption => {
     const value = selectedOption.value;
+    console.log(value);
+    if (value === 'verb') {
+      setIsVerbSelect(true);
+    } else {
+      setIsVerbSelect(false);
+    }
     //   dispatch(setSelectedFilter(value));
   };
   return (
@@ -44,11 +58,7 @@ export const Filters = () => {
         name="category"
         options={options}
         isSearchable={false}
-        // onChange={selectedOption => {
-        //   const selectedValue = selectedOption ? selectedOption.value : null;
-        //   console.log(selectedValue);
-        //   input.onChange(selectedValue);
-        // }}
+        onChange={handleSubmit}
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,
@@ -61,7 +71,7 @@ export const Filters = () => {
             outline: 'none',
             paddingLeft: 12,
             paddingRight: 12,
-            marginBottom: 20,
+            marginBottom: 8,
             border: state.isSelected
               ? '1px solid black'
               : '1px solid rgba(121, 4, 17, 0.1) ',
@@ -96,6 +106,24 @@ export const Filters = () => {
           indicatorSeparator: () => null,
         }}
       />
+      {isVerbSelect && (
+        <Fieldset>
+          <div>
+            <input
+              type="radio"
+              id="regular"
+              name="verb"
+              value="regular"
+              defaultChecked
+            />
+            <label htmlFor="regular">Regular</label>
+          </div>
+          <div>
+            <input type="radio" id="irregular" name="verb" value="irregular" />
+            <label htmlFor="irregular">Irregular</label>
+          </div>
+        </Fieldset>
+      )}
     </div>
   );
 };

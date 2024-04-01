@@ -14,5 +14,6 @@ export const theme = {
     textSuccess: '#3CBF61',
     border: 'rgba(18, 20, 23, 0.1)',
     active: '#A5C0B8',
+    borderWhite: 'rgba(252, 252, 252, 0.4)',
   },
 };
