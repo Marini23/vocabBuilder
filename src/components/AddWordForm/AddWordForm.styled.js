@@ -47,13 +47,14 @@ export const Input = styled.input`
   font-weight: 500;
   line-height: 24px;
   color: ${({ theme }) => theme.colors.textWhiteMain};
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   &::placeholder {
     color: ${({ theme }) => theme.colors.textWhiteMain};
   }
   &:hover,
   &:focus {
     outline: none;
+    border: 3px solid #d1d5db;
   }
 `;
 
@@ -100,4 +101,44 @@ export const CancelBtn = styled.button`
     color: ${({ theme }) => theme.colors.black};
     background-color: ${({ theme }) => theme.colors.textWhiteMain};
   }
+`;
+
+export const FlagContainer = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+  vertical-align: baseline;
+`;
+
+export const TextFlag = styled.p`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.32px;
+  color: ${({ theme }) => theme.colors.textWhiteMain};
+`;
+
+export const Fieldset = styled.fieldset`
+  display: flex;
+  gap: 16px;
+  border: none;
+  margin-bottom: 20px;
+`;
+
+export const InputRadio = styled.input`
+  -webkit-appearance: none;
+  appearance: none;
+`;
+
+export const Label = styled.label`
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.56px;
+  color: ${({ theme }) => theme.colors.textWhiteMain};
+  margin-left: 8px;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
 `;

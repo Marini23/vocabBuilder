@@ -22,6 +22,7 @@ export const InputFilter = styled.input`
   font-weight: 500;
   line-height: 24px;
   outline: none;
+  background-color: transparent;
 `;
 
 export const ButtonFilter = styled.button`
