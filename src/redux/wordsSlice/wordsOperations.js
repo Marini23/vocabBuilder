@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from '../authSlice/authOperations';
 
-const getToken = () => {
+const token = () => {
   // Replace this with your actual token retrieval logic
   const persistedState = localStorage.getItem('persist:auth');
   let token = null;
@@ -15,37 +15,56 @@ const getToken = () => {
   return token;
 };
 
-export const getAuthorizationHeader = () => `Bearer ${getToken()}`;
-
 const baseURL = 'https://vocab-builder-backend.p.goit.global/api';
 
-export const axiosInstance = axios.create({
+const axiosInstance = axios.create({
   baseURL,
 });
 
-// Add a request interceptor to dynamically set the authorization header
-axiosInstance.interceptors.request.use(
-  config => {
-    const token = getToken();
-    console.log(token);
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+export const setAuthHeader = token => {
+  axiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
+export const addWord = createAsyncThunk(
+  'words/addWord',
+  async (newWord, thunkAPI) => {
+    try {
+      const response = await axios.post('/words/create', {
+        ...newWord,
+      });
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
-    return config;
-  },
-  error => {
-    return Promise.reject(error);
   }
 );
 
 export const fetchUserWords = createAsyncThunk(
-  'contacts/fetchUserWords',
+  'contacts/fetchUserWordsTest',
   async (_, thunkAPI) => {
     try {
-      const { data } = await axiosInstance.get('/words/own');
+      const { data } = await axios.get('/words/own');
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const editWord = createAsyncThunk(
+  'contacts/editWord',
+  async (newFormValues, thunkAPI) => {
+    try {
+      const wordId = newFormValues.id;
+
+      const response = await axios.patch(`/words/edit/${wordId}`, {
+        en: newFormValues.name,
+        ua: newFormValues.number,
+      });
+
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
   }
 );

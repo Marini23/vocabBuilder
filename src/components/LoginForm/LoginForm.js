@@ -50,7 +50,13 @@ export const LoginForm = ({ isClose }) => {
     },
     validationSchema: formSchema,
     onSubmit: async (values, actions) => {
-      await dispatch(logIn(values))
+      console.log('login');
+      await dispatch(
+        logIn({
+          email: values.email,
+          password: values.password,
+        })
+      )
         .unwrap()
         .catch(error => {
           toast.error(error);

@@ -10,7 +10,6 @@ import {
   FlagContainer,
   Form,
   Input,
-  InputRadio,
   Label,
   Text,
   TextFlag,
@@ -18,21 +17,14 @@ import {
 } from './AddWordForm.styled';
 import ukraineIcon from '../../images/ukraine.svg';
 import ukIcon from '../../images/united_kingdom.svg';
-import radioBtn from '../../images/radioButton.svg';
-import radioBtnChecked from '../../images/radioButton_checked.svg';
+// import radioBtn from '../../images/radioButton.svg';
+// import radioBtnChecked from '../../images/radioButton_checked.svg';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addWord } from '../../redux/wordsSlice/wordsOperations';
 
 const enRegExp = /\b[A-Za-z'-]+(?:\s+[A-Za-z'-]+)*\b/;
 const uaRegExp = /^(?![A-Za-z])[А-ЯІЄЇҐґа-яієїʼ\s]+$/u;
-
-const formSchema = Yup.object().shape({
-  en: Yup.string()
-    .matches(enRegExp, 'String is not valid')
-    .required('String is required'),
-  ua: Yup.string()
-    .matches(uaRegExp, 'String is not valid')
-    .required('String is required'),
-});
 
 const data = [
   'verb',
@@ -48,14 +40,28 @@ const data = [
   'functional phrase',
 ];
 
+const formSchema = Yup.object().shape({
+  category: Yup.string()
+    .required('Category is required')
+    .oneOf(data, 'Invalid category'),
+  isIrregular: Yup.boolean(),
+  en: Yup.string()
+    .matches(enRegExp, 'String is not valid')
+    .required('String is required'),
+  ua: Yup.string()
+    .matches(uaRegExp, 'String is not valid')
+    .required('String is required'),
+});
+
 const options = data.map(item => ({
   value: item,
   label: item.charAt(0).toUpperCase() + item.slice(1),
 }));
 
 export const AddWordForm = ({ isClose }) => {
+  const dispatch = useDispatch();
   const [isVerbSelect, setIsVerbSelect] = useState(false);
-  const handleSubmit = selectedOption => {
+  const handleVerb = selectedOption => {
     const value = selectedOption.value;
     console.log(value);
     if (value === 'verb') {
@@ -67,16 +73,22 @@ export const AddWordForm = ({ isClose }) => {
   };
   const formik = useFormik({
     initialValues: {
+      category: '',
+      isIrregular: false,
       en: '',
       ua: '',
     },
     validationSchema: formSchema,
     onSubmit: values => {
+      console.log(values);
       if (formik.isValid) {
+        console.log('add word');
+        dispatch(addWord(values));
         alert('Word added successfully');
         isClose();
         formik.resetForm();
       }
+      console.log('error add word');
     },
   });
 
@@ -89,12 +101,19 @@ export const AddWordForm = ({ isClose }) => {
           the language base and expanding the vocabulary.
         </Text>
         <Select
+          value={options.find(
+            option => option.value === formik.values.category
+          )} // Set value based on formik values
+          onChange={selectedOption => {
+            formik.setFieldValue('category', selectedOption.value);
+            handleVerb(selectedOption);
+          }} // Update formik field
+          onBlur={formik.handleBlur}
           id="cacategory"
           placeholder={'Category'}
           name="category"
           options={options}
           isSearchable={false}
-          onChange={handleSubmit}
           styles={{
             control: (baseStyles, state) => ({
               ...baseStyles,
@@ -153,8 +172,10 @@ export const AddWordForm = ({ isClose }) => {
               <Label>
                 <input
                   type="radio"
-                  name="verb"
-                  value="regular"
+                  name="isIrregular"
+                  value="false"
+                  checked={!formik.values.isIrregular} // Check if the value is false
+                  onChange={formik.handleChange} // Update Formik field
                   defaultChecked
                 />
                 Regular
@@ -162,7 +183,13 @@ export const AddWordForm = ({ isClose }) => {
             </div>
             <div>
               <Label>
-                <input type="radio" name="verb" value="irregular" />
+                <input
+                  type="radio"
+                  name="isIrregular"
+                  value="true"
+                  checked={formik.values.isIrregular} // Check if the value is true
+                  onChange={formik.handleChange} // Update Formik field
+                />
                 Irregular
               </Label>
             </div>
@@ -177,7 +204,7 @@ export const AddWordForm = ({ isClose }) => {
           type="text"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.en}
+          value={formik.values.ua}
           placeholder="Працювати"
           autoComplete="off"
         />
@@ -193,7 +220,7 @@ export const AddWordForm = ({ isClose }) => {
           type="text"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.ua}
+          value={formik.values.en}
           placeholder="Work"
           autoComplete="off"
         />

@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectToken, selectUserId } from '../../redux/selectors';
 import { fetchUserWords } from '../../redux/wordsSlice/wordsOperations';
-import { fetchUserWordsTest } from '../../redux/authSlice/authOperations';
 import {
   createColumnHelper,
   flexRender,
@@ -111,7 +110,6 @@ export const WordsTable = () => {
   });
 
   useEffect(() => {
-    dispatch(fetchUserWordsTest());
     // dispatch(fetchUserWords());
   }, [dispatch]);
 

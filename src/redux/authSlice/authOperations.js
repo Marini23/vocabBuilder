@@ -3,9 +3,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://vocab-builder-backend.p.goit.global/api';
 
-export const instance = axios.create({
-  baseURL: 'https://vocab-builder-backend.p.goit.global/api',
-});
+// export const instance = axios.create({
+//   baseURL: 'https://vocab-builder-backend.p.goit.global/api',
+// });
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -52,47 +52,20 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 
 export const fetchCurrentUser = createAsyncThunk(
   'auth/refresh',
+
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
+    console.log(persistedToken);
 
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
     try {
       setAuthHeader(persistedToken);
-
+      console.log('ola');
       const response = await axios.get(`/users/current`);
-
-      return response.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
-    }
-  }
-);
-
-export const fetchUserWordsTest = createAsyncThunk(
-  'contacts/fetchUserWordsTest',
-  async (_, thunkAPI) => {
-    try {
-      const { data } = await axios.get('/words/own');
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-
-export const editWord = createAsyncThunk(
-  'contacts/editWord',
-  async (newFormValues, thunkAPI) => {
-    try {
-      const wordId = newFormValues.id;
-
-      const response = await axios.patch(`/words/edit/${wordId}`, {
-        en: newFormValues.name,
-        ua: newFormValues.number,
-      });
+      console.log(response);
 
       return response.data;
     } catch (e) {
