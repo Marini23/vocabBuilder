@@ -140,7 +140,6 @@ export const RegisterForm = ({ isClose }) => {
         ) : null}
         <Button type="submit">Register</Button>
         <ButtonLink>
-          {/* <Link to="/login">Login</Link> */}
           <Link href="/vocabBuilder/login">Login</Link>
         </ButtonLink>
       </Form>

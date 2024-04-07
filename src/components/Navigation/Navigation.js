@@ -9,11 +9,12 @@ import { UserBar } from 'components/UserBar/UserBar';
 import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
 import { useEffect, useState } from 'react';
 import { UserNav } from 'components/UserNav/UserNav';
-// import { useSelector } from 'react-redux';
-// import { selectIsLoggedIn } from '../../redux/selectors';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from '../../redux/selectors';
 // import { Link } from 'react-router-dom';
 
 export const Navigation = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const [isdesktopWindowSize, setIsDesktopWindowSize] = useState(false);
 
   useEffect(() => {
@@ -42,7 +43,6 @@ export const Navigation = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <Header>
       <NavLinkLogoStyled to="/">
@@ -51,9 +51,9 @@ export const Navigation = () => {
         </SvgLogo>
         <TextLogo>VocabBuilder</TextLogo>
       </NavLinkLogoStyled>
-      {isdesktopWindowSize && <UserNav />}
-      <UserBar />
-      <BurgerMenu />
+      {isLoggedIn && isdesktopWindowSize && <UserNav />}
+      {isLoggedIn && <UserBar />}
+      {isLoggedIn && <BurgerMenu />}
     </Header>
   );
 };

@@ -1,19 +1,19 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { instance } from '../authSlice/authOperations';
+// import { instance } from '../authSlice/authOperations';
 
-const token = () => {
-  // Replace this with your actual token retrieval logic
-  const persistedState = localStorage.getItem('persist:auth');
-  let token = null;
-  if (persistedState) {
-    const persistAuth = JSON.parse(persistedState);
-    token = persistAuth.token;
-  } else {
-    console.log('No persist:auth data found in localStorage.');
-  }
-  return token;
-};
+// const token = () => {
+//   // Replace this with your actual token retrieval logic
+//   const persistedState = localStorage.getItem('persist:auth');
+//   let token = null;
+//   if (persistedState) {
+//     const persistAuth = JSON.parse(persistedState);
+//     token = persistAuth.token;
+//   } else {
+//     console.log('No persist:auth data found in localStorage.');
+//   }
+//   return token;
+// };
 
 const baseURL = 'https://vocab-builder-backend.p.goit.global/api';
 

@@ -63,13 +63,11 @@ export const AddWordForm = ({ isClose }) => {
   const [isVerbSelect, setIsVerbSelect] = useState(false);
   const handleVerb = selectedOption => {
     const value = selectedOption.value;
-    console.log(value);
     if (value === 'verb') {
       setIsVerbSelect(true);
     } else {
       setIsVerbSelect(false);
     }
-    //   dispatch(setSelectedFilter(value));
   };
   const formik = useFormik({
     initialValues: {
@@ -80,15 +78,20 @@ export const AddWordForm = ({ isClose }) => {
     },
     validationSchema: formSchema,
     onSubmit: values => {
-      console.log(values);
       if (formik.isValid) {
-        console.log('add word');
-        dispatch(addWord(values));
+        const payload = {
+          category: values.category,
+          en: values.en,
+          ua: values.ua,
+        };
+        if (values.category === 'verb') {
+          payload.isIrregular = values.isIrregular;
+        }
+        dispatch(addWord(payload));
         alert('Word added successfully');
         isClose();
         formik.resetForm();
       }
-      console.log('error add word');
     },
   });
 
@@ -174,7 +177,7 @@ export const AddWordForm = ({ isClose }) => {
                   type="radio"
                   name="isIrregular"
                   value="false"
-                  checked={!formik.values.isIrregular} // Check if the value is false
+                  // checked={!formik.values.isIrregular} // Check if the value is false
                   onChange={formik.handleChange} // Update Formik field
                   defaultChecked
                 />
@@ -187,7 +190,7 @@ export const AddWordForm = ({ isClose }) => {
                   type="radio"
                   name="isIrregular"
                   value="true"
-                  checked={formik.values.isIrregular} // Check if the value is true
+                  // checked={formik.values.isIrregular} // Check if the value is true
                   onChange={formik.handleChange} // Update Formik field
                 />
                 Irregular

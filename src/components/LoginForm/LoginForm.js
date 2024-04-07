@@ -18,16 +18,10 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/authSlice/authOperations';
 
-const nameRegex = /[a-zA-Zа-яА-Я]+(([' ][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
 const emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 const passwordRegex = /^(?=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/;
 
 const formSchema = Yup.object().shape({
-  name: Yup.string()
-    .matches(nameRegex, {
-      message: `Name may contain only letters, apostrophe, dash and spaces.`,
-    })
-    .required('Name is required'),
   email: Yup.string()
     .matches(emailRegex, {
       message: `Please enter a valid email address. It should follow the format 'example@example.com`,
@@ -50,13 +44,8 @@ export const LoginForm = ({ isClose }) => {
     },
     validationSchema: formSchema,
     onSubmit: async (values, actions) => {
-      console.log('login');
-      await dispatch(
-        logIn({
-          email: values.email,
-          password: values.password,
-        })
-      )
+      console.log('login oper');
+      await dispatch(logIn(values))
         .unwrap()
         .catch(error => {
           toast.error(error);
