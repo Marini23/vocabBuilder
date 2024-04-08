@@ -68,3 +68,27 @@ export const editWord = createAsyncThunk(
     }
   }
 );
+
+export const staticticsWords = createAsyncThunk(
+  'words/statistics',
+  async (newWord, thunkAPI) => {
+    try {
+      const response = await axios.get('/words/statistics');
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const categoriesWords = createAsyncThunk(
+  'words/categories',
+  async (newWord, thunkAPI) => {
+    try {
+      const response = await axios.get('/words/categories');
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

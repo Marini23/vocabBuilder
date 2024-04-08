@@ -1,38 +1,24 @@
+import { useSelector } from 'react-redux';
 import { CiSearch } from 'react-icons/ci';
-import Select, { components } from 'react-select';
-import { ThemeContext } from 'styled-components';
-import { useContext, useState } from 'react';
+import Select from 'react-select';
+import { useState } from 'react';
 import {
   ButtonFilter,
   Fieldset,
   FormFilter,
   InputFilter,
-  InputRadio,
 } from './Filters.styled';
-import { Link } from 'react-router-dom';
-
-const data = [
-  'verb',
-  'participle',
-  'noun',
-  'adjective',
-  'pronoun',
-  'numerals',
-  'adverb',
-  'preposition',
-  'conjunction',
-  'phrasal verb',
-  'functional phrase',
-];
-
-const options = data.map(item => ({
-  value: item,
-  label: item.charAt(0).toUpperCase() + item.slice(1),
-}));
+import { selectCategories } from '../../redux/selectors';
 
 export const Filters = () => {
+  const categories = useSelector(selectCategories);
   const [isVerbSelect, setIsVerbSelect] = useState(false);
-  const theme = useContext(ThemeContext);
+
+  const options = categories.map(item => ({
+    value: item,
+    label: item.charAt(0).toUpperCase() + item.slice(1),
+  }));
+
   const handleSubmit = selectedOption => {
     const value = selectedOption.value;
     console.log(value);
@@ -41,7 +27,6 @@ export const Filters = () => {
     } else {
       setIsVerbSelect(false);
     }
-    //   dispatch(setSelectedFilter(value));
   };
   return (
     <div>
@@ -78,8 +63,7 @@ export const Filters = () => {
             borderColor: state.isFocused ? 'black' : 'rgba(121, 4, 17, 0.1)',
             boxShadow: state.isFocused ? 'none' : 'none',
             ':hover': {
-              // Add hover effect
-              borderColor: '#121417', // Change border color on hover
+              borderColor: '#121417',
               boxShadow: 'none',
             },
           }),

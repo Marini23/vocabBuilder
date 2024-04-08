@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addWord, fetchUserWords } from './wordsOperations';
+import {
+  addWord,
+  categoriesWords,
+  fetchUserWords,
+  staticticsWords,
+} from './wordsOperations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -14,6 +19,8 @@ const wordsSlice = createSlice({
   name: 'words',
   initialState: {
     wordsList: [],
+    totalCount: 0,
+    categories: [],
     currentPage: 1,
     totalPages: null,
     isLoading: false,
@@ -44,6 +51,16 @@ const wordsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.wordsList.push(action.payload);
+      })
+      .addCase(staticticsWords.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.totalCount = action.payload.totalCount;
+      })
+      .addCase(categoriesWords.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.categories = action.payload;
       }),
 });
 

@@ -1,8 +1,6 @@
 // import { useReactTable } from '@tanstack/react-table';
 import { useEffect, useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectToken, selectUserId } from '../../redux/selectors';
-import { fetchUserWords } from '../../redux/wordsSlice/wordsOperations';
+import { useDispatch } from 'react-redux';
 import {
   createColumnHelper,
   flexRender,
@@ -10,7 +8,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import { Table, Td, Th, Thead } from './WordsTable.styled';
-import { ActionsBtn } from './ActionsBtn';
+// import { ActionsBtn } from './ActionsBtn';
 
 const fakeData = [
   {
@@ -93,10 +91,8 @@ const columnDef = [
 export const WordsTable = () => {
   const dispatch = useDispatch();
   const [editedRows, setEditedRows] = useState({});
-
   const data = useMemo(() => fakeData, []);
-
-  const tableData = useMemo(() => data, []);
+  const tableData = useMemo(() => data, [data]);
   const tableColumnDef = useMemo(() => columnDef, []);
 
   const table = useReactTable({
