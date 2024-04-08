@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vocabBuilder/static/css/main.cd2e038f.css",
-    "main.js": "/vocabBuilder/static/js/main.ef5764fe.js",
+    "main.css": "/vocabBuilder/static/css/main.c470b230.css",
+    "main.js": "/vocabBuilder/static/js/main.0a438354.js",
     "static/media/illustration_desktop_4x.jpg": "/vocabBuilder/static/media/illustration_desktop_4x.da4e28eba7d90f6735f0.jpg",
     "static/media/burger_tablet.svg": "/vocabBuilder/static/media/burger_tablet.d90342d8d09c5e481f6441005777ab4c.svg",
     "static/media/ill_burger.svg": "/vocabBuilder/static/media/ill_burger.e9d00130d498f4375577a66e6a2de3c9.svg",
@@ -17,17 +17,21 @@
     "static/media/FixelDisplay-Regular.woff2": "/vocabBuilder/static/media/FixelDisplay-Regular.7025834e819edbb98433.woff2",
     "static/media/illustration_mobile.jpg": "/vocabBuilder/static/media/illustration_mobile.98ddcf48fed026418725.jpg",
     "static/media/icons.svg": "/vocabBuilder/static/media/icons.f6b2bd0ef3bfe583fa44c2efc6fc3b21.svg",
+    "static/media/united_kingdom.svg": "/vocabBuilder/static/media/united_kingdom.f668d8b9d41e758ef8d48179e6eda560.svg",
     "index.html": "/vocabBuilder/index.html",
     "static/media/avatar_menu.svg": "/vocabBuilder/static/media/avatar_menu.238ed234e9bc1f8d013b9c52f9f63f68.svg",
     "static/media/avatar_user.svg": "/vocabBuilder/static/media/avatar_user.01a7a3d36ba7605ff688a2614c05fae5.svg",
+    "static/media/ukraine.svg": "/vocabBuilder/static/media/ukraine.fbfab1bfb778b2d056a74566a9106e34.svg",
     "static/media/burger_icon.svg": "/vocabBuilder/static/media/burger_icon.424592733778a4d52889214303e00fd1.svg",
     "static/media/arrow-right.svg": "/vocabBuilder/static/media/arrow-right.4b214d1ffec1f2eadc67f26ccd4fdc1a.svg",
+    "static/media/plus.svg": "/vocabBuilder/static/media/plus.9f35d4d33a8980cc3b3fd816c1fe0cf7.svg",
     "static/media/close.svg": "/vocabBuilder/static/media/close.7302c8098678bd148a02ae1e19f6e094.svg",
-    "main.cd2e038f.css.map": "/vocabBuilder/static/css/main.cd2e038f.css.map",
-    "main.ef5764fe.js.map": "/vocabBuilder/static/js/main.ef5764fe.js.map"
+    "static/media/arrow_right_green.svg": "/vocabBuilder/static/media/arrow_right_green.916687f16d95edca1001c0085c21d711.svg",
+    "main.c470b230.css.map": "/vocabBuilder/static/css/main.c470b230.css.map",
+    "main.0a438354.js.map": "/vocabBuilder/static/js/main.0a438354.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd2e038f.css",
-    "static/js/main.ef5764fe.js"
+    "static/css/main.c470b230.css",
+    "static/js/main.0a438354.js"
   ]
 }
