@@ -9,6 +9,7 @@ export const selectUserEmail = state => state.auth.user.email;
 export const selectToken = state => state.auth.token;
 export const selectTotalCount = state => state.words.totalCount;
 export const selectCategories = state => state.words.categories;
+export const selectUserWords = state => state.words.userWordsList;
 
 export const selectIsAuth = createSelector(
   [selectIsLoggedIn, selectToken],

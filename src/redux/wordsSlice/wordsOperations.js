@@ -44,7 +44,7 @@ export const fetchUserWords = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get('/words/own');
-      return data;
+      return data.results;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

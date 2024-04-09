@@ -18,7 +18,7 @@ const handleRejected = (state, action) => {
 const wordsSlice = createSlice({
   name: 'words',
   initialState: {
-    wordsList: [],
+    userWordsList: [],
     totalCount: 0,
     categories: [],
     currentPage: 1,
@@ -45,12 +45,13 @@ const wordsSlice = createSlice({
       .addCase(fetchUserWords.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.wordsList = action.payload;
+        console.log(action.payload);
+        state.userWordsList = action.payload;
       })
       .addCase(addWord.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.wordsList.push(action.payload);
+        state.userWordsList.push(action.payload);
       })
       .addCase(staticticsWords.fulfilled, (state, action) => {
         state.isLoading = false;
