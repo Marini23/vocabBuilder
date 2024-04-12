@@ -99,3 +99,28 @@ export const TextFlag = styled.p`
   line-height: 19.32px;
   color: ${({ theme }) => theme.colors.textWhiteMain};
 `;
+
+export const Fieldset = styled.fieldset`
+  display: flex;
+  gap: 16px;
+  border: none;
+  margin-bottom: 20px;
+`;
+
+export const InputRadio = styled.input`
+  -webkit-appearance: none;
+  appearance: none;
+`;
+
+export const Label = styled.label`
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.56px;
+  color: ${({ theme }) => theme.colors.textWhiteMain};
+  margin-left: 8px;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+`;

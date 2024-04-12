@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   addWord,
   categoriesWords,
+  editWord,
   fetchUserWords,
   staticticsWords,
 } from './wordsOperations';
@@ -52,6 +53,15 @@ const wordsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.userWordsList.push(action.payload);
+      })
+      .addCase(editWord.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const index = state.userWordsList.findIndex(
+          word => word.id === action.payload.id
+        );
+        console.log(action.payload);
+        state.userWordsList[index] = action.payload;
       })
       .addCase(staticticsWords.fulfilled, (state, action) => {
         state.isLoading = false;

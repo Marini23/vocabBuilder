@@ -52,14 +52,13 @@ export const fetchUserWords = createAsyncThunk(
 );
 
 export const editWord = createAsyncThunk(
-  'contacts/editWord',
+  'words/editWord',
   async (newFormValues, thunkAPI) => {
     try {
       const wordId = newFormValues.id;
-
       const response = await axios.patch(`/words/edit/${wordId}`, {
-        en: newFormValues.name,
-        ua: newFormValues.number,
+        en: newFormValues.en,
+        ua: newFormValues.ua,
       });
 
       return response.data;
