@@ -3,6 +3,7 @@ import {
   addWord,
   categoriesWords,
   editWord,
+  fetchAllWords,
   fetchUserWords,
   staticticsWords,
 } from './wordsOperations';
@@ -20,6 +21,7 @@ const wordsSlice = createSlice({
   name: 'words',
   initialState: {
     userWordsList: [],
+    allWords: [],
     totalCount: 0,
     categories: [],
     currentPage: 1,
@@ -43,6 +45,12 @@ const wordsSlice = createSlice({
       .addCase(addWord.pending, handlePending)
       .addCase(fetchUserWords.rejected, handleRejected)
       .addCase(addWord.rejected, handleRejected)
+      .addCase(fetchAllWords.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        console.log(action.payload);
+        state.allWords = action.payload;
+      })
       .addCase(fetchUserWords.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
