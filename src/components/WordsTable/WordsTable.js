@@ -37,7 +37,7 @@ const EditCell = ({ row, table }) => {
         </div>
       ) : (
         <button onClick={setEditedRows} name="edit">
-          ✐
+          ...
         </button>
       )}
     </div>

@@ -1,6 +1,6 @@
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Layuot } from './Layout/Layout';
 import LoginPage from 'pages/LoginPage/LoginPage';
 // import { selectIsAuth } from '../redux/selectors';
@@ -9,16 +9,22 @@ import { fetchCurrentUser } from '../redux/authSlice/authOperations';
 import RestrictedRoute from './RestrictedRoute';
 import { DictionaryPage } from 'pages/DictionaryPage/DictionaryPage';
 import PrivateRoute from './PrivateRoute';
+// import { selectIsAuth } from '../redux/selectors';
+import { selectIsRefreshing } from '../redux/selectors';
 
 export const App = () => {
   const dispatch = useDispatch();
   // const isAuth = useSelector(selectIsAuth);
+  const isRefreshing = useSelector(selectIsRefreshing);
+  // console.log(isAuth);
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <div>
       <Routes>
         <Route path="/" element={<Layuot />}>
