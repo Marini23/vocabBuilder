@@ -5,6 +5,7 @@ import { useState } from 'react';
 import {
   ButtonFilter,
   Fieldset,
+  FilterContainer,
   FormFilter,
   InputFilter,
 } from './Filters.styled';
@@ -29,17 +30,16 @@ export const Filters = () => {
     }
   };
   return (
-    <div>
+    <FilterContainer>
       <FormFilter>
         <InputFilter type="text" placeholder="Find the word" name="filter" />
         <ButtonFilter type="submit">
           <CiSearch style={{ width: '20px', height: '20px' }} />
         </ButtonFilter>
       </FormFilter>
-
       <Select
         id="cacategory"
-        placeholder={'Category'}
+        placeholder={'Categories'}
         name="category"
         options={options}
         isSearchable={false}
@@ -108,6 +108,6 @@ export const Filters = () => {
           </div>
         </Fieldset>
       )}
-    </div>
+    </FilterContainer>
   );
 };

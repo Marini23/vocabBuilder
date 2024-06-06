@@ -5,6 +5,10 @@ export const Container = styled.div`
   gap: 8px;
   align-items: center;
   margin-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    gap: 16px;
+  }
 `;
 
 export const Button = styled.button`

@@ -1,7 +1,22 @@
 import styled from 'styled-components';
 
+export const FilterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 80px;
+  }
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 0;
+  }
+`;
+
 export const FormFilter = styled.div`
-  width: 100%;
+  height: 48px;
   display: flex;
   justify-content: space-between;
   border: 1px solid rgba(121, 4, 17, 0.1);
@@ -13,6 +28,9 @@ export const FormFilter = styled.div`
   }
   &:focus {
     border-color: black;
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
   }
 `;
 
@@ -36,6 +54,10 @@ export const Fieldset = styled.fieldset`
   gap: 16px;
   border: none;
   margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    align-items: center;
+  }
 `;
 
 export const InputRadio = styled.input`

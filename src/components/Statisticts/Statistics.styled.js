@@ -7,8 +7,11 @@ export const Text = styled.p`
   font-weight: 500;
   line-height: 19.32px;
   color: ${({ theme }) => theme.colors.textLink};
-  margin-bottom: 28px;
-  margin-top: 40px;
+  margin-bottom: 8px;
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 `;
 
 export const TextSpan = styled.span`
