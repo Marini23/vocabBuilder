@@ -15,6 +15,9 @@ export const Button = styled.button`
   @media screen and (min-width: 768px) {
     margin-left: 28px;
   }
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
 `;
 
 export const BurgerMenuContainer = styled.div`

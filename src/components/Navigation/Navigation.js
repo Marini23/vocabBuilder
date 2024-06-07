@@ -1,4 +1,5 @@
 import {
+  Button,
   Header,
   NavLinkLogoStyled,
   SvgLogo,
@@ -9,13 +10,16 @@ import { UserBar } from 'components/UserBar/UserBar';
 import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
 import { useEffect, useState } from 'react';
 import { UserNav } from 'components/UserNav/UserNav';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/selectors';
+import arrowRight from '../../images/arrow-right.svg';
+import { logOut } from '../../redux/authSlice/authOperations';
 // import { Link } from 'react-router-dom';
 
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const [isdesktopWindowSize, setIsDesktopWindowSize] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleResize = () => {
@@ -43,6 +47,10 @@ export const Navigation = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleClickLogOut = () => {
+    dispatch(logOut());
+  };
+
   return (
     <Header>
       <NavLinkLogoStyled to="/">
@@ -53,6 +61,12 @@ export const Navigation = () => {
       </NavLinkLogoStyled>
       {isLoggedIn && isdesktopWindowSize && <UserNav />}
       {isLoggedIn && <UserBar />}
+      {isLoggedIn && isdesktopWindowSize && (
+        <Button type="button" onClick={handleClickLogOut}>
+          <span> Lod Out</span>
+          <img src={arrowRight} alt="arrow right" />
+        </Button>
+      )}
       {isLoggedIn && <BurgerMenu />}
     </Header>
   );
