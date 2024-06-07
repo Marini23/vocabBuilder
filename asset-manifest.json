@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vocabBuilder/static/css/main.c470b230.css",
-    "main.js": "/vocabBuilder/static/js/main.9ea6fbbd.js",
+    "main.js": "/vocabBuilder/static/js/main.90dabf69.js",
     "static/media/illustration_desktop_4x.jpg": "/vocabBuilder/static/media/illustration_desktop_4x.da4e28eba7d90f6735f0.jpg",
     "static/media/burger_tablet.svg": "/vocabBuilder/static/media/burger_tablet.d90342d8d09c5e481f6441005777ab4c.svg",
     "static/media/ill_burger.svg": "/vocabBuilder/static/media/ill_burger.e9d00130d498f4375577a66e6a2de3c9.svg",
@@ -28,10 +28,10 @@
     "static/media/close.svg": "/vocabBuilder/static/media/close.7302c8098678bd148a02ae1e19f6e094.svg",
     "static/media/arrow_right_green.svg": "/vocabBuilder/static/media/arrow_right_green.916687f16d95edca1001c0085c21d711.svg",
     "main.c470b230.css.map": "/vocabBuilder/static/css/main.c470b230.css.map",
-    "main.9ea6fbbd.js.map": "/vocabBuilder/static/js/main.9ea6fbbd.js.map"
+    "main.90dabf69.js.map": "/vocabBuilder/static/js/main.90dabf69.js.map"
   },
   "entrypoints": [
     "static/css/main.c470b230.css",
-    "static/js/main.9ea6fbbd.js"
+    "static/js/main.90dabf69.js"
   ]
 }
